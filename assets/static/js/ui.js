@@ -39,25 +39,41 @@ jQuery(document).ready(function($){
 		$('.popup-add-task').removeClass('open');
 	});
 
-/*------------------------------------ */
+/*--------------WebSocket------------------- */
  
-if('WebSocket' in window) {
-  /* WebSocket поддерживается. Вы можете писать свой код */
-  console.log('true');
-} else {
-  /* WebSockets не поддерживается. Попробуйте использовать старые методы связи */
-  console.log('false');
-}
 
-var connection = new WebSocket('wss://secure.example.org:67890/myapp');
+	var msgArea = $('.messages');
+	var elementMessage = $('#textarea-message');
+	var webSocket = new WebSocket('ws://' + window.location.host + '/chat');
+	var name = $( ".conversation" ).data('name');
 
-	connection.onopen = function() {
-	  console.log('Connection open!');
+	msgArea.animate({ scrollTop: $(document).height() }, 0);
+	elementMessage.val('').focus();
+
+	webSocket.onmessage = function(message) {
+	    var data = JSON.parse(message.data);
+	    var notOwn = '';
+	    var nameElement = '';
+	    var msgArea = $('.messages');
+
+	    if (name != data.sender) {
+	    	notOwn = 'not-';
+	    	nameElement = '<div class="name-author">' + data.sender + '</div>';
+	    }
+
+	    var msg = '<div class="single-message ' + notOwn + 'own">' +
+	    nameElement + '<div class="message">' + data.message + '</div>' + 
+	    '</div>';
+
+	    msgArea.append(msg);
+
+	    msgArea.animate({ scrollTop: $(document).height() }, 0);
+		elementMessage.val('').focus();
 	}
+	$('.send-message').click(function(e) {
+	    webSocket.send(elementMessage.val());
+	})
 
-	connection.onclose = function() {
-	  console.log('Connection closed');
-	}
 
 });
 
