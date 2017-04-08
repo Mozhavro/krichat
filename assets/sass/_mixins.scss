@@ -110,7 +110,7 @@ $tablet-width: 768px;
 $desktop-width: 916px;
 $mobile-width: 480px;
 
-$red : #f72323;
+$red : #e84949;
 
 @mixin tablet {
   @media (max-width: #{$tablet-width}) {

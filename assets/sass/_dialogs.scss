@@ -1,3 +1,4 @@
+$bubbles: rgba(84, 150, 149, 0.8);
 
 #dialogs-container {
 	margin: 10px 0 0;
@@ -14,15 +15,25 @@
 			background: $red;
 			color: white;
 			white-space: nowrap;
-			.people {
-				display: inline-block;
-				float: right;
-				width: 30px;
-				height: 30px;
-				background: url(../images/users-group.svg);
-				@include bg();
-				cursor: pointer; 
-			}
+			@extend .flex;
+			@include alignBoth(space-between, center);
+			.settings { 
+				@extend .flex;
+				@include alignItems(center);
+				.log-out {
+					margin-right: 20px;
+					cursor: pointer;
+					font: 14px $lightTextFont, sans-serif; 
+				}
+				.people {
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					background: url(../images/users-group.svg);
+					@include bg();
+					cursor: pointer; 
+				}
+			}			
 	 	} 
 	 	.messages {  
 	 		height: calc(100vh - 280px); 
@@ -36,7 +47,7 @@
 		 			display: inline-block;
 		 			max-width: 60%;
 		 			border-radius: 4px;
-		 			background: rgba(84, 150, 149, 0.51);
+		 			background: $bubbles;
 		 			padding: 10px 15px;
 		 			position: relative; 
 		 			color: white;
@@ -46,7 +57,7 @@
 					.message:before {
 						 content: '';
 						 border: 8px solid transparent;
-						 border-left-color: rgba(84, 150, 149, 0.51);
+						 border-left-color: $bubbles;
 						 position: absolute;
 						 right: -16px;
 						 top: 8px;
@@ -64,7 +75,7 @@
 	 					&:before {
 						  content: '';
 						  border: 8px solid transparent;
-						  border-right-color: rgba(84, 150, 149, 0.51);
+						  border-right-color: $bubbles;
 						  position: absolute;
 						  left: -16px;
 						  top: 8px;
@@ -92,6 +103,15 @@
 	 			width: 100%;
 	 			height: 70px;
 	 			resize: none;
+	 			border: none;
+	 			border-bottom: 1px solid $bubbles;
+	 			box-shadow: none;
+	 			outline: none;
+	 			margin: 10px 0 0;
+	 			font: 14px $lightTextFont, sans-serif;
+	 			&:focus {
+	 				border-color: #148e8e;
+	 			}
 	 		}
 	 		.row-input:nth-child(2) {
 	 			@extend .flex;
@@ -100,6 +120,8 @@
 	 		.send-message {
 				cursor: pointer;
 				border: none;
+				outline: none;
+				box-shadow: none;
 				@extend .button;
 				background: $red;
 				margin: 5px 0 15px;

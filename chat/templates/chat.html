@@ -9,7 +9,12 @@
 				 <section id="dialogs-container">
 				 	<div class="columns">
 				 		<div class="conversation">
-				 			<div class="name">Покатушки <span class="people"></span></div>
+				 			<div class="name">Покатушки 
+				 				<span class="settings">
+				 					<span class="log-out">Log out</span>
+				 					<span class="people"></span>
+			 					</span>
+		 					</div>
 				 			<div class="messages scrollbar-macosx">
 				 				<div class="single-message own"> 
 				 					<div class="message">Hello!</div>
@@ -38,16 +43,8 @@
 				 			<div class="input-block">			 			
 				 				<div class="placeholder-message">Что-то пишет..</div>
 				 				<form action="">   
-				 					<div class="row-input"> 
-					 					<span class="input">
-											<textarea id="textarea-message" class="input__field"></textarea>
-											<label class="input__label" for="textarea-message">
-												<span class="input__label-content">Введите сообщение</span>
-											</label>
-											<svg class="graphic" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-												<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-											</svg>
-										</span>
+				 					<div class="row-input">  		 
+										<textarea id="textarea-message" placeholder="Введите сообщение" class="input__field"></textarea>
 									</div>
 									<div class="row-input">
 				 						<button class="send-message">Отправить</button>
