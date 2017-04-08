@@ -8,7 +8,7 @@
 			<main class="content-page">
 				 <section id="dialogs-container">
 				 	<div class="columns">
-				 		<div class="conversation">
+				 		<div class="conversation" data-name="{{ user.get_username }}">
 				 			<div class="name">Покатушки <span class="people"></span></div>
 				 			<div class="messages scrollbar-macosx">
 				 				<div class="single-message own"> 
@@ -37,7 +37,7 @@
 				 			</div>
 				 			<div class="input-block">			 			
 				 				<div class="placeholder-message">Что-то пишет..</div>
-				 				<form action="">   
+			
 				 					<div class="row-input"> 
 					 					<span class="input">
 											<textarea id="textarea-message" class="input__field"></textarea>
@@ -52,7 +52,7 @@
 									<div class="row-input">
 				 						<button class="send-message">Отправить</button>
 				 					</div>
-				 				</form>
+
 				 			</div>
 				 		</div>
 				 		<div class="list-of-all-conv scrollbar-macosx">

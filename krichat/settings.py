@@ -37,8 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels',
     'chat'
 ]
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'asgiref.inmemory.ChannelLayer',
+        'ROUTING': 'krichat.routing.channel_routing',
+    },
+}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,9 +90,9 @@ DATABASES = {
     #}
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'CHANGE THIS',                      # Or path to database file if using sqlite3.
-        'USER': 'CHANGE THIS',                      # Not used with sqlite3.
-        'PASSWORD': 'CHANGE THIS',                  # Not used with sqlite3.
+        'NAME': 'CHANGE ME',                      # Or path to database file if using sqlite3.
+        'USER': 'CHANGE ME',                      # Not used with sqlite3.
+        'PASSWORD': 'CHANGE ME',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
