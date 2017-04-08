@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<head>
+	<meta charset="UTF-8">
+	<title>Dialog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">  
+	<link rel="stylesheet" href="css/lib/jquery.scrollbar.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header id="header">
+			<div class="confines-width">
+				<div class="left-part"> 
+					<div class="logo"><img src="static/images/logo.png" alt="logo" style="height: 60px;top: 3px;position: relative;"></div>
+				</div>
+				<div class="right-part">					
+					<nav id="navigation"> 
+					</nav>
+					<ul class="personal-links"> 						 
+					</ul>
+				</div>
+				<div id="burger">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+				</div>
+			</div>
+		</header>
+		<div class="confines-width">
+			<main class="content-page">
+				 <section id="dialogs-container">
+				 	<div class="columns">
+				 		<div class="conversation">
+				 			<div class="name">Покатушки <span class="people"></span></div>
+				 			<div class="messages scrollbar-macosx">
+				 				<div class="single-message own"> 
+				 					<div class="message">Hello!</div>
+			 					</div>
+			 					<div class="single-message not-own"> 
+			 						<div class="name-author">Yaaaa</div>	 
+				 					<div class="message">Hello, John!</div>
+			 					</div>
+			 					<div class="single-message own">
+				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dolores animi praesentium est dolor culpa voluptate fugiat rerum ut laborum sint temporibus eligendi fuga dolorem saepe neque, odit dicta debitis.</div>
+			 					</div>
+			 					<div class="placeholder-message time">08/04/2017</div>
+			 					<div class="single-message not-own">
+			 						<div class="name-author">Yaaaa</div>
+				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+			 					</div>
+			 					<div class="single-message not-own">
+			 						<div class="name-author">Po</div>	
+				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+			 					</div>
+			 					<div class="single-message not-own">
+			 						<div class="name-author">Guli</div>
+				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+			 					</div>				 				
+				 			</div>
+				 			<div class="input-block">			 			
+				 				<div class="placeholder-message">Что-то пишет..</div>
+				 				<form action="">   
+				 					<div class="row-input"> 
+					 					<span class="input">
+											<textarea id="textarea-message" class="input__field"></textarea>
+											<label class="input__label" for="textarea-message">
+												<span class="input__label-content">Введите сообщение</span>
+											</label>
+											<svg class="graphic" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+												<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+											</svg>
+										</span>
+									</div>
+									<div class="row-input">
+				 						<button class="send-message">Отправить</button>
+				 					</div>
+				 				</form>
+				 			</div>
+				 		</div>
+				 		<div class="list-of-all-conv scrollbar-macosx">
+				 			<div class="search">
+				 				<form action="" id="search-form"> 
+									<input class="input__field" type="text" placeholder="Поиск" id="search-conversation" />   
+									<button class="add-button"></button> 
+				 				</form>
+				 			</div>
+				 			<div class="person">
+				 				<div class="avatar">
+				 					<img src="images/avatar.jpg" alt="avatar-image">
+				 				</div>
+				 				<div class="nickname">Беседа1</div>
+				 			</div> 
+				 			<div class="person active">
+				 				<div class="avatar">
+				 					<img src="images/avatar.jpg" alt="avatar-image">
+				 				</div>
+				 				<div class="nickname">Беседа2</div>
+				 			</div>
+				 		</div>
+				 	</div>
+				 	<div class="all-active-users scrollbar-macosx">
+				 		<h3>Online users</h3>
+				 		<div class="person">
+			 				<div class="avatar">
+			 					<img src="images/avatar.jpg" alt="avatar-image">
+			 				</div>
+			 				<div class="nickname">QQQ</div>
+			 			</div> 
+			 			<div class="person">
+			 				<div class="avatar">
+			 					<img src="images/avatar.jpg" alt="avatar-image">
+			 				</div>
+			 				<div class="nickname">QQQ</div>
+			 			</div> 
+				 	</div>
+				 </section>
+			</main> 
+		</div> 
+		<footer id="footer"></footer>
+	</div>  
+	<script src="js/lib/jquery-3.2.0.min.js"></script> 
+	<script src="js/lib/jquery.scrollbar.min.js"></script> 
+	<script src="js/ui.js"></script>
+</body>
+</html>

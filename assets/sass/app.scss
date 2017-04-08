@@ -1,0 +1,16 @@
+@import "mixins.scss";
+@import "header.scss";
+@import "auth.scss";  
+
+.wrapper { 
+	background: white;
+	font-family: $textFont, sans-serif;  
+	.confines-width {	 	
+		.content-page {
+			width: 100%;  
+			@import "dialogs.scss"; 	
+		} 
+	}   
+}
+
+ 
