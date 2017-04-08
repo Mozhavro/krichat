@@ -2,10 +2,21 @@
 {% load i18n %}
 
 {% block content %}
-<form method="post" action=".">
-  {% csrf_token %}
-  {{ form.as_p }}
-
-  <input type="submit" value="{% trans 'Submit' %}" />
-</form>
+<div class="center-block">
+	<form method="post" action="." id="form-register">
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	
+	<div class="bottom-block">
+	 {% if user.is_authenticated %}
+        {% trans "Logged in" %}: {{ user.username }} 
+        (<a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a> | 
+        <a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a>)
+    {% else %}
+       <a href="{% url 'auth_login' %}">{% trans "Log in" %}</a>
+    {% endif %} 
+	 	 <input type="submit" value="{% trans 'Submit' %}" />
+	  </div>
+	</form>
+</div>
 {% endblock %}
