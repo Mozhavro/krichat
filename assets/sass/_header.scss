@@ -1,4 +1,4 @@
-#header, #footer {
+#header {
 	width: 100%;
 	background: $green;
 }
@@ -113,7 +113,7 @@
 		#burger {
 			display: none;
 			width: 30px;
-				height: 22.5px;
+			height: 22.5px;
 			-webkit-transform: rotate(0deg); 
 		    transform: rotate(0deg);
 		    -webkit-transition: .5s ease-in-out;  
