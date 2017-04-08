@@ -5,19 +5,14 @@
 <div class="center-block">
 	<form method="post" action="." id="form-login">
   	{% csrf_token %} 
-  	{{ form.as_p }}
-
-<<<<<<< HEAD
+  	{{ form.as_p }} 
+ 
 	  <input type="submit" value="{% trans 'Log in' %}" />
 	  <input type="hidden" name="next" value="{{ next }}" />
-	</form>
-=======
-  <input type="submit" value="{% trans 'Log in' %}" />
-  <input type="hidden" name="next" value="/" />
-</form>
->>>>>>> a3b7201447d05147785bd7edeb51cbb272551b9b
+	</form> 
+ 
 
-	<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-	<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+	<p class="help-link">{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}!</a></p>
+	<p class="help-link">{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}!</a></p>
 </div>
 {% endblock %}
