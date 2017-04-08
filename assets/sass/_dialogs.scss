@@ -1,0 +1,207 @@
+
+#dialogs-container {
+	margin: 10px 0 0;
+	height: calc(100vh - 40px);
+	 .columns {
+		@extend .flex;
+	 }
+	 .conversation { 
+	 	width: calc(100% - 300px);
+	 	margin-right: 20px;
+	 	.name {
+			font: 22px $textFont, sans-serif;
+			padding: 10px 15px;
+			background: $red;
+			color: white;
+			white-space: nowrap;
+			.people {
+				display: inline-block;
+				float: right;
+				width: 30px;
+				height: 30px;
+				background: url(../images/users-group.svg);
+				@include bg();
+				cursor: pointer; 
+			}
+	 	} 
+	 	.messages {  
+	 		height: calc(100vh - 280px); 
+	 		padding-bottom: 25px;
+	 		overflow-y: scroll;
+	 		.single-message {
+	 			@extend .flex;
+	 			margin: 10px 20px 10px 15px;  
+	 			.message {
+	 				width: auto;
+		 			display: inline-block;
+		 			max-width: 60%;
+		 			border-radius: 4px;
+		 			background: rgba(84, 150, 149, 0.51);
+		 			padding: 10px 15px;
+		 			position: relative; 
+		 			color: white;
+	 			}
+	 			&.own {
+					@include justCont(flex-end);
+					.message:before {
+						 content: '';
+						 border: 8px solid transparent;
+						 border-left-color: rgba(84, 150, 149, 0.51);
+						 position: absolute;
+						 right: -16px;
+						 top: 8px;
+					}
+	 			}
+
+	 			&.not-own {
+	 				@include flexDir(column);
+	 				.name-author {
+	 					color: silver;
+	 					font: 12px $boldTextFont, sans-serif;
+	 					margin-bottom: 5px;
+	 				}
+	 				.message {
+	 					&:before {
+						  content: '';
+						  border: 8px solid transparent;
+						  border-right-color: rgba(84, 150, 149, 0.51);
+						  position: absolute;
+						  left: -16px;
+						  top: 8px;
+						}
+					}
+	 			}
+	 		}
+	 		.placeholder-message.time {
+	 			font: 12px $lightTextFont, sans-serif;
+	 			color: silver;
+	 			text-align: center;
+	 			padding: 10px 0;
+	 		}
+	 	}
+	 	.input-block {
+	 		position: relative;
+	 		padding: 25px 15px 10px;
+	 		.placeholder-message {  	 
+	 			font: 16px $lightTextFont, sans-serif;
+	 			color: silver;
+	 			top: 10px;
+	 			position: absolute;
+	 		}
+	 		#textarea-message {
+	 			width: 100%;
+	 			height: 70px;
+	 			resize: none;
+	 		}
+	 		.row-input:nth-child(2) {
+	 			@extend .flex;
+	 			@include justCont(flex-end);
+	 		}
+	 		.send-message {
+				cursor: pointer;
+				border: none;
+				@extend .button;
+				background: $red;
+				margin: 5px 0 15px;
+				font: 13px $lightTextFont, sans-serif;
+				float: none;
+	 		}
+	 	}
+	 }
+	 .list-of-all-conv, .all-active-users {
+	 	width: 300px;  
+	 	height: calc(100vh - 100px); 
+	 	background: #ebedef;
+	 	.person {
+	 		width: 100%;  
+	 		@extend .flex;
+	 		@include alignItems(center);
+	 		padding: 10px 15px; 
+	 		cursor: pointer;
+	 		@include trans();
+	 		&:nth-child(even) {
+	 			background: #A8C9C9;
+	 		}
+	 		&:nth-child(odd) {
+	 			background: #ebedef;
+	 		}
+	 		.avatar {
+	 			width: 35px; 
+	 			height: 35px;
+	 			border-radius: 50%;
+	 			overflow: hidden;
+	 			margin-right: 20px;
+	 			img {
+	 				max-width: 100%;
+	 				width: 100%;
+	 				height: 100%;
+	 				-webkit-object-fit: cover;
+	 				object-fit: cover;
+	 			}
+	 		}
+	 		&:hover {
+	 			background: $red;
+	 			color: white;
+	 		}
+	 		&.active {
+	 			background: $red;
+	 			color: white;
+	 		}
+	 	}
+	 	.search {
+	 		#search-form {  
+	 			position: relative;
+	 			margin: 10px 0;
+	 			input {
+	 				border: none;
+	 				border-bottom: 1px solid $red;
+	 				background: transparent;
+	 				width: 90%;
+	 				margin-left: 5%;
+	 				outline: none;
+	 				color: grey;
+					font: 14px $lightTextFont, sans-serif;	 				
+	 				&::-webkit-input-placeholder {
+						color: silver;
+						font: 15px $textFont, sans-serif;
+	 				}
+	 			}
+	 			button {
+	 				position: absolute;
+	 				right: 15px;
+	 				top: 48%;
+	 				border: none;
+	 				cursor: pointer;
+	 				width: 25px;
+	 				height: 25px;
+	 				background: url(../images/create-group-button.svg);
+	 				@include bg();
+	 				outline: none;
+	 				-webkit-transform: translateY(-50%);
+	 				transform: translateY(-50%);
+	 			}
+		 	}
+	 	}
+	 }
+	 .all-active-users  {
+	 	position: absolute;
+	 	right: 0;
+	 	top: 0;
+	 	-webkit-transform: translateX(100%);
+	 	transform: translateX(100%);
+	 	@include trans();
+	 	&.active {
+	 		-webkit-transform: translateX(0%);
+	 		transform: translateX(0%);
+	 	}
+	 	h3 {
+	 		padding: 12.5px 15px;
+	 		background: $red;
+	 		color: white; 
+	 		margin: 0;
+	 		font: 18px $textFont, sans-serif;
+	 	}
+	 }
+	 position: relative;
+	 overflow: hidden;
+}
