@@ -1,740 +1,134 @@
-/* ------------- MIXINS --------------*/
-/* line 31, ../../sass/_mixins.scss */
-.confines-width, #header .confines-width {
-  width: 96%;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/*
+Error: Invalid CSS after "						@import ": expected file to import (string or url()), was "tablet() {"
+        on line 51 of C:/Messager/krichat/assets/sass/_dialogs.scss
+        from line 11 of C:/Messager/krichat/assets/sass/app.scss
 
-@font-face {
-  font-family: "Roboto-Regular";
-  src: url("fonts/Roboto-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Roboto-Light";
-  src: url("fonts/Roboto-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Roboto-Bold";
-  src: url("fonts/Roboto-Bold.ttf") format("truetype");
-}
-/* line 153, ../../sass/_mixins.scss */
-.flex, #header .confines-width, #header .confines-width .right-part, #header .confines-width .right-part #navigation ul, #header .confines-width .right-part .personal-links, .center-block, #form-reset-password .bottom-block, #form-login .bottom-block, #form-register .bottom-block, .wrapper .confines-width .content-page #dialogs-container .columns, .wrapper .confines-width .content-page #dialogs-container .conversation .name, .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings, .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out, .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .row-input:nth-child(2), .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 {
-  display: -webkit-flex;
-  display: flex;
-}
+46: 						width: 30px;
+47: 						height: 30px;
+48: 						background: url(../images/users-group.svg);
+49: 						@include bg();
+50: 						cursor: pointer; 
+51: 						@import tablet() {
+52: 							& {
+53: 								display: inline-block;
+54: 							}
+55: 						}
+56: 					}
 
-/* line 158, ../../sass/_mixins.scss */
-.text-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* line 164, ../../sass/_mixins.scss */
-.button, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message {
-  background: #e84949;
-  padding: 11px 20px 8px;
-  float: right;
-  margin: 12px 0 25px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: white;
-  border: none;
-  font: 700 16px "Roboto-Regular";
-}
-/* line 176, ../../sass/_mixins.scss */
-.button:after, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message:after {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  left: 170%;
-  top: -53%;
-  background: rgba(255, 255, 255, 0.4);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-transition: 0.8s left;
-  transition: 0.8s left;
-}
-/* line 189, ../../sass/_mixins.scss */
-.button:hover:after, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message:hover:after {
-  left: -300%;
-}
-
-/* line 1, ../../sass/_header.scss */
-#header {
-  width: 100%;
-  background: #549695;
-}
-
-/* line 6, ../../sass/_header.scss */
-#header .confines-width {
-  margin-top: 0 !important;
-  padding: 10px 0;
-  height: 30px;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-}
-/* line 14, ../../sass/_header.scss */
-#header .confines-width .left-part .logo {
-  width: 250px;
-}
-/* line 16, ../../sass/_header.scss */
-#header .confines-width .left-part .logo img {
-  max-width: 100%;
-}
-/* line 21, ../../sass/_header.scss */
-#header .confines-width .right-part {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-  width: calc(100% - 255px);
-}
-/* line 26, ../../sass/_header.scss */
-#header .confines-width .right-part #navigation ul {
-  padding-left: 0;
-  list-style: none;
-}
-/* line 30, ../../sass/_header.scss */
-#header .confines-width .right-part #navigation ul a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  padding: 10px 0px 7px;
-  cursor: pointer;
-  margin: 0 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid transparent;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  border-bottom: 1px solid transparent;
-}
-/* line 81, ../../sass/_mixins.scss */
-#header .confines-width .right-part #navigation ul a:hover {
-  padding-bottom: 4px;
-  border-color: white;
-}
-/* line 42, ../../sass/_header.scss */
-#header .confines-width .right-part .personal-links {
-  list-style: none;
-  color: white;
-  font: 18px "Roboto-Regular", sans-serif;
-  padding-left: 0;
-  cursor: pointer;
-  margin: 10px 0;
-}
-/* line 50, ../../sass/_header.scss */
-#header .confines-width .right-part .personal-links li {
-  margin: 0 10px;
-}
-/* line 52, ../../sass/_header.scss */
-#header .confines-width .right-part .personal-links li:last-child {
-  margin-right: 0;
-  position: relative;
-}
-/* line 55, ../../sass/_header.scss */
-#header .confines-width .right-part .personal-links li:last-child:before {
-  content: "/";
-  position: absolute;
-  left: -13px;
-  top: 0;
-}
-/* line 63, ../../sass/_header.scss */
-#header .confines-width .right-part .personal-links a {
-  color: white;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 15px;
-  border-bottom: 1px solid transparent;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  padding: 10px 0px 11px;
-  text-transform: uppercase;
-}
-/* line 81, ../../sass/_mixins.scss */
-#header .confines-width .right-part .personal-links a:hover {
-  padding-bottom: 4px;
-  border-color: white;
-}
-@media (max-width: 768px) {
-  /* line 21, ../../sass/_header.scss */
-  #header .confines-width .right-part {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    min-height: 100vh;
-    background: white;
-    z-index: 10;
-    -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    -webkit-transition: .5s transform ease-in-out;
-    transition: .5s transform ease-in-out;
-  }
-  /* line 85, ../../sass/_header.scss */
-  #header .confines-width .right-part #navigation {
-    width: 90%;
-    margin: 10px auto;
-  }
-  /* line 88, ../../sass/_header.scss */
-  #header .confines-width .right-part #navigation ul {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-  /* line 89, ../../sass/_header.scss */
-  #header .confines-width .right-part #navigation ul li {
-    margin: 20px 0;
-  }
-  /* line 93, ../../sass/_header.scss */
-  #header .confines-width .right-part #navigation ul a {
-    color: #549695;
-  }
-  /* line 98, ../../sass/_header.scss */
-  #header .confines-width .right-part .personal-links {
-    width: 100%;
-    padding: 0 5%;
-    border-bottom: 1px solid #549695;
-    height: 70px;
-    color: grey;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-  /* line 107, ../../sass/_header.scss */
-  #header .confines-width .right-part .personal-links a {
-    color: #549695;
-  }
-}
-/* line 113, ../../sass/_header.scss */
-#header .confines-width #burger {
-  display: none;
-  width: 30px;
-  height: 22.5px;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
-}
-/* line 122, ../../sass/_header.scss */
-#header .confines-width #burger span {
-  display: block;
-  position: absolute;
-  height: 4.5px;
-  width: 50%;
-  background: white;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
-}
-/* line 136, ../../sass/_header.scss */
-#header .confines-width #burger span:nth-child(even) {
-  left: 50%;
-}
-/* line 140, ../../sass/_header.scss */
-#header .confines-width #burger span:nth-child(odd) {
-  left: 0px;
-}
-/* line 144, ../../sass/_header.scss */
-#header .confines-width #burger span:nth-child(1), #header .confines-width #burger span:nth-child(2) {
-  top: 0px;
-}
-/* line 148, ../../sass/_header.scss */
-#header .confines-width #burger span:nth-child(3), #header .confines-width #burger span:nth-child(4) {
-  top: 9px;
-}
-/* line 152, ../../sass/_header.scss */
-#header .confines-width #burger span:nth-child(5), #header .confines-width #burger span:nth-child(6) {
-  top: 18px;
-}
-@media (max-width: 768px) {
-  /* line 157, ../../sass/_header.scss */
-  #header .confines-width #burger {
-    display: block;
-  }
-}
-
-/* line 168, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(1), body.open-menu .wrapper #header .confines-width #burger span:nth-child(6) {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-/* line 173, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(2), body.open-menu .wrapper #header .confines-width #burger span:nth-child(5) {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-/* line 178, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(1) {
-  left: 2.5px;
-  top: 4.5px;
-}
-/* line 183, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(2) {
-  left: calc(50% - 2.5px);
-  top: 3.5px;
-}
-/* line 188, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(3) {
-  left: -50%;
-  opacity: 0;
-}
-/* line 193, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(4) {
-  left: 100%;
-  opacity: 0;
-}
-/* line 198, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(5) {
-  left: 4px;
-  top: 13.5px;
-}
-/* line 203, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width #burger span:nth-child(6) {
-  left: calc(50% - 3px);
-  top: 13.5px;
-}
-/* line 208, ../../sass/_header.scss */
-body.open-menu .wrapper #header .confines-width .right-part {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-
-/* line 1, ../../sass/_auth.scss */
-.center-block {
-  max-width: 600px;
-  width: 90%;
-  margin: 0 auto;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  height: calc(100vh - 45px);
-  font-family: "Roboto-Regular", sans-serif;
-}
-/* line 10, ../../sass/_auth.scss */
-.center-block .help-link {
-  margin: 5px auto;
-}
-/* line 12, ../../sass/_auth.scss */
-.center-block .help-link a {
-  color: #e84949;
-}
-/* line 14, ../../sass/_auth.scss */
-.center-block .help-link a:hover {
-  color: #9c1f1f;
-}
-
-/* line 21, ../../sass/_auth.scss */
-.notifications {
-  font: 17px "Roboto-Regular", sans-serif;
-  color: #e84949;
-}
-
-/* line 26, ../../sass/_auth.scss */
-#form-reset-password, #form-login, #form-register {
-  width: 100%;
-}
-/* line 28, ../../sass/_auth.scss */
-#form-reset-password input[type="submit"], #form-login input[type="submit"], #form-register input[type="submit"] {
-  background: #e84949;
-  padding: 11px 20px 8px;
-  margin: 12px 0 25px;
-  position: relative;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: white;
-  border: none;
-  font: 700 16px "Roboto-Regular";
-  float: right;
-  margin-right: 5%;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-/* line 41, ../../sass/_auth.scss */
-#form-reset-password input[type="submit"]:hover, #form-login input[type="submit"]:hover, #form-register input[type="submit"]:hover {
-  background: #9c1f1f;
-}
-/* line 45, ../../sass/_auth.scss */
-#form-reset-password .helptext, #form-login .helptext, #form-register .helptext {
-  display: none;
-}
-/* line 48, ../../sass/_auth.scss */
-#form-reset-password ul, #form-login ul, #form-register ul {
-  position: fixed;
-  right: 10px;
-  top: 50%;
-  max-width: 350px;
-  padding: 10px;
-  display: none;
-  background: green;
-}
-/* line 57, ../../sass/_auth.scss */
-#form-reset-password ul.errorlist, #form-login ul.errorlist, #form-register ul.errorlist {
-  display: block;
-  position: static;
-  background: #e84949;
-  list-style: none;
-  margin-left: 5%;
-}
-/* line 64, ../../sass/_auth.scss */
-#form-reset-password input[type="text"], #form-reset-password input[type="password"], #form-reset-password input[type="email"], #form-login input[type="text"], #form-login input[type="password"], #form-login input[type="email"], #form-register input[type="text"], #form-register input[type="password"], #form-register input[type="email"] {
-  box-shadow: none;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid #549695;
-  display: block;
-  width: 90%;
-  font-family: "Roboto-Light", sans-serif;
-  margin: 10px auto;
-}
-/* line 73, ../../sass/_auth.scss */
-#form-reset-password input[type="text"]:focus, #form-reset-password input[type="password"]:focus, #form-reset-password input[type="email"]:focus, #form-login input[type="text"]:focus, #form-login input[type="password"]:focus, #form-login input[type="email"]:focus, #form-register input[type="text"]:focus, #form-register input[type="password"]:focus, #form-register input[type="email"]:focus {
-  border-color: #9c1f1f;
-}
-/* line 78, ../../sass/_auth.scss */
-#form-reset-password a, #form-login a, #form-register a {
-  color: #e84949;
-}
-/* line 80, ../../sass/_auth.scss */
-#form-reset-password a:hover, #form-login a:hover, #form-register a:hover {
-  color: #9c1f1f;
-}
-/* line 85, ../../sass/_auth.scss */
-#form-reset-password .bottom-block, #form-login .bottom-block, #form-register .bottom-block {
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  align-items: center;
-}
-/* line 88, ../../sass/_auth.scss */
-#form-reset-password .bottom-block input[type="submit"], #form-login .bottom-block input[type="submit"], #form-register .bottom-block input[type="submit"] {
-  margin: 0 5% 0 20px;
-}
-/* line 93, ../../sass/_auth.scss */
-#form-reset-password label, #form-login label, #form-register label {
-  width: 90%;
-  display: block;
-  margin: 0 auto;
-}
-
-/* line 5, ../../sass/app.scss */
-.wrapper {
-  background: #F1F1F1;
-  font-family: "Roboto-Regular", sans-serif;
-}
-/* line 9, ../../sass/app.scss */
-.wrapper .confines-width .content-page, .wrapper #header .confines-width .content-page, #header .wrapper .confines-width .content-page {
-  width: 100%;
-}
-/* line 3, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container {
-  margin: 0;
-  padding-top: 15px;
-  height: 100vh;
-  position: relative;
-}
-/* line 7, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .columns {
-  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-}
-/* line 11, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation {
-  width: calc(100% - 300px);
-}
-/* line 13, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .name {
-  font: 22px "Roboto-Regular", sans-serif;
-  padding: 12px 15px 13px;
-  background: #333;
-  color: white;
-  white-space: nowrap;
-  position: relative;
-  z-index: 1;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
-}
-/* line 24, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .name .settings {
-  -webkit-align-items: center;
-  align-items: center;
-}
-/* line 27, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out {
-  cursor: pointer;
-  color: white;
-  font: 14px "Roboto-Light", sans-serif;
-  -webkit-align-items: center;
-  align-items: center;
-}
-/* line 34, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out span {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background: url(../images/logout.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  margin-left: 15px;
-}
-/* line 46, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages {
-  height: calc(100vh - 280px);
-  padding-bottom: 25px;
-  overflow-y: scroll;
-  background: white;
-  border-right: 1px solid #F2EBF2;
-}
-/* line 53, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message {
-  margin: 10px 20px 10px 15px;
-}
-/* line 56, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message .message {
-  width: auto;
-  display: inline-block;
-  max-width: 60%;
-  border-radius: 4px;
-  background: rgba(84, 150, 149, 0.8);
-  padding: 10px 15px;
-  position: relative;
-  color: white;
-  border-bottom: 1px solid #EEE;
-}
-/* line 67, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.own {
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-/* line 69, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.own .message:before {
-  content: '';
-  border: 8px solid transparent;
-  border-left-color: rgba(84, 150, 149, 0.8);
-  position: absolute;
-  right: -16px;
-  top: 8px;
-}
-/* line 79, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.not-own {
-  -webkit-flex-direction: column;
-  flex-direction: column;
-}
-/* line 81, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.not-own .name-author {
-  color: silver;
-  font: 12px "Roboto-Bold", sans-serif;
-  margin-bottom: 5px;
-}
-/* line 87, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.not-own .message:before {
-  content: '';
-  border: 8px solid transparent;
-  border-right-color: rgba(84, 150, 149, 0.8);
-  position: absolute;
-  left: -16px;
-  top: 8px;
-}
-/* line 98, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .messages .placeholder-message.time {
-  font: 12px "Roboto-Light", sans-serif;
-  color: silver;
-  text-align: center;
-  padding: 10px 0;
-}
-/* line 105, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .input-block {
-  background: white;
-  position: relative;
-  padding: 25px 15px 10px;
-  -webkit-box-shadow: 0px -1.5px 1px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px -1.5px 1px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px -1.5px 1px 0px rgba(0, 0, 0, 0.2);
-}
-/* line 110, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .input-block .placeholder-message {
-  font: 16px "Roboto-Light", sans-serif;
-  color: silver;
-  top: 10px;
-  position: absolute;
-}
-/* line 116, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .input-block #textarea-message {
-  width: 100%;
-  height: 70px;
-  resize: none;
-  border: none;
-  border-bottom: 1px solid rgba(84, 150, 149, 0.8);
-  box-shadow: none;
-  outline: none;
-  margin: 10px 0 0;
-  font: 14px "Roboto-Light", sans-serif;
-}
-/* line 126, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .input-block #textarea-message:focus {
-  border-color: #148e8e;
-}
-/* line 130, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .input-block .row-input:nth-child(2) {
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-/* line 134, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background: #e84949;
-  margin: 5px 0 15px;
-  font: 13px "Roboto-Light", sans-serif;
-  float: none;
-}
-@media (max-width: 768px) {
-  /* line 148, ../../sass/_dialogs.scss */
-  .wrapper .confines-width .content-page #dialogs-container .conversation {
-    width: 100%;
-  }
-}
-/* line 153, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv, .wrapper .confines-width .content-page #dialogs-container .all-active-users {
-  width: 300px;
-  height: calc(100vh - 57px);
-  background: white;
-}
-/* line 158, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person {
-  width: 100%;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 10px 15px;
-  cursor: pointer;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-/* line 166, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person .avatar, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person .avatar {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 20px;
-}
-/* line 172, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person .avatar img, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person .avatar img {
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-  -webkit-object-fit: cover;
-  object-fit: cover;
-}
-/* line 180, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person:hover, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person:hover {
-  background: #555;
-  color: white;
-}
-/* line 184, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person.active, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person.active {
-  background: #333;
-  color: white;
-}
-/* line 190, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form {
-  position: relative;
-  margin: 10px 0;
-}
-/* line 193, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form input, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form input {
-  border: none;
-  border-bottom: 1px solid #e84949;
-  background: transparent;
-  width: 90%;
-  margin-left: 5%;
-  outline: none;
-  color: grey;
-  font: 14px "Roboto-Light", sans-serif;
-}
-/* line 202, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form input::-webkit-input-placeholder, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form input::-webkit-input-placeholder {
-  color: silver;
-  font: 15px "Roboto-Regular", sans-serif;
-}
-/* line 207, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form button, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form button {
-  position: absolute;
-  right: 15px;
-  top: 48%;
-  border: none;
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
-  background: url(../images/create-group-button.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  outline: none;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-/* line 226, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .all-active-users h3 {
-  padding: 12px 15px 13px;
-  background: #e84949;
-  color: white;
-  margin: 0;
-  font: 22px "Roboto-Regular", sans-serif;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
-}
-/* line 235, ../../sass/_dialogs.scss */
-.wrapper .confines-width .content-page #dialogs-container .all-active-users h3 .people {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background: url(../images/users-group.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-  /* line 247, ../../sass/_dialogs.scss */
-  .wrapper .confines-width .content-page #dialogs-container {
-    display: none;
-  }
-}
+Backtrace:
+C:/Messager/krichat/assets/sass/_dialogs.scss:51
+C:/Messager/krichat/assets/sass/app.scss:11
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1117:in `expr!'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:371:in `block in import_directive'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:370:in `loop'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:370:in `import_directive'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:222:in `special_directive'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:197:in `directive'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:658:in `ruleset'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:312:in `to_tree'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `map'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"						@import \": expected file to import (string or url()), was \"tablet() {\"\A         on line 51 of C:/Messager/krichat/assets/sass/_dialogs.scss\A         from line 11 of C:/Messager/krichat/assets/sass/app.scss\A \A 46: 						width: 30px;\A 47: 						height: 30px;\A 48: 						background: url(../images/users-group.svg);\A 49: 						@include bg();\A 50: 						cursor: pointer; \A 51: 						@import tablet() {\A 52: 							& {\A 53: 								display: inline-block;\A 54: 							}\A 55: 						}\A 56: 					}"; }
