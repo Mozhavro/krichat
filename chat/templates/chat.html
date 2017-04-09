@@ -13,6 +13,7 @@
 				 			<div class="name"> {% if request.path == '/' %}Общая комната{% else %} {{ user.username }}@{{ room.title }} {% endif %}
 				 				<span class="settings">
 				 					<a href="{% url 'auth_logout' %}?next=/" class="log-out">Выйти<span></span></a>
+				 					<span class="people"></span>
 			 					</span>
 		 					</div>
 

@@ -26,6 +26,7 @@ SECRET_KEY = 'su1030v4i3+4gs$@(j!=5(=7$*ayve))axs&)w!2&o#=1-lnu9'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '192.168.43.114',
     '192.168.3.213',
     '192.168.2.117',
     '192.168.0.114',
@@ -53,7 +54,7 @@ PWA_APP_DESCRIPTION = "An offline chat"
 PWA_APP_THEME_COLOR = '#e84949'
 PWA_APP_ICONS = [
     {
-        'src': '../assets/static/images/avatar.jpg',
+        'src': '../assets/static/images/scream.png',
         'sizes': '160x160'
     }
 ]
