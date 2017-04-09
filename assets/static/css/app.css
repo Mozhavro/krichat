@@ -620,13 +620,19 @@ body.open-menu .wrapper #header .confines-width .right-part {
   font: 13px "Roboto-Light", sans-serif;
   float: none;
 }
-/* line 147, ../../sass/_dialogs.scss */
+@media (max-width: 768px) {
+  /* line 148, ../../sass/_dialogs.scss */
+  .wrapper .confines-width .content-page #dialogs-container .conversation {
+    width: 100%;
+  }
+}
+/* line 153, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv, .wrapper .confines-width .content-page #dialogs-container .all-active-users {
   width: 300px;
   height: calc(100vh - 57px);
   background: white;
 }
-/* line 152, ../../sass/_dialogs.scss */
+/* line 158, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person {
   width: 100%;
   -webkit-align-items: center;
@@ -636,7 +642,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
-/* line 160, ../../sass/_dialogs.scss */
+/* line 166, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person .avatar, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person .avatar {
   width: 35px;
   height: 35px;
@@ -644,7 +650,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   overflow: hidden;
   margin-right: 20px;
 }
-/* line 166, ../../sass/_dialogs.scss */
+/* line 172, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person .avatar img, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person .avatar img {
   max-width: 100%;
   width: 100%;
@@ -652,22 +658,22 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -webkit-object-fit: cover;
   object-fit: cover;
 }
-/* line 174, ../../sass/_dialogs.scss */
+/* line 180, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person:hover, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person:hover {
   background: #555;
   color: white;
 }
-/* line 178, ../../sass/_dialogs.scss */
+/* line 184, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person.active, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person.active {
   background: #333;
   color: white;
 }
-/* line 184, ../../sass/_dialogs.scss */
+/* line 190, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form {
   position: relative;
   margin: 10px 0;
 }
-/* line 187, ../../sass/_dialogs.scss */
+/* line 193, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form input, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form input {
   border: none;
   border-bottom: 1px solid #e84949;
@@ -678,12 +684,12 @@ body.open-menu .wrapper #header .confines-width .right-part {
   color: grey;
   font: 14px "Roboto-Light", sans-serif;
 }
-/* line 196, ../../sass/_dialogs.scss */
+/* line 202, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form input::-webkit-input-placeholder, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form input::-webkit-input-placeholder {
   color: silver;
   font: 15px "Roboto-Regular", sans-serif;
 }
-/* line 201, ../../sass/_dialogs.scss */
+/* line 207, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form button, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form button {
   position: absolute;
   right: 15px;
@@ -700,7 +706,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 220, ../../sass/_dialogs.scss */
+/* line 226, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 {
   padding: 12px 15px 13px;
   background: #e84949;
@@ -715,7 +721,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -moz-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 229, ../../sass/_dialogs.scss */
+/* line 235, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 .people {
   display: inline-block;
   width: 30px;
@@ -725,4 +731,10 @@ body.open-menu .wrapper #header .confines-width .right-part {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  /* line 247, ../../sass/_dialogs.scss */
+  .wrapper .confines-width .content-page #dialogs-container {
+    display: none;
+  }
 }

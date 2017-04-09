@@ -143,6 +143,12 @@ $bubbles: rgba(84, 150, 149, 0.8);
 				float: none;
 	 		}
 	 	}
+
+	 	@include tablet() {
+		 	& {
+		 		width: 100%;
+		 	}
+		 }
 	 }
 	 .list-of-all-conv, .all-active-users {
 	 	width: 300px;  
@@ -237,4 +243,9 @@ $bubbles: rgba(84, 150, 149, 0.8);
 	 	}
 	 }
 	 position: relative;
+	 @include tablet() {
+	 	& {
+	 		display: none;
+	 	}
+	 }
 }
