@@ -33,8 +33,8 @@ def kri_message(message):
     else:
         screaming = False
 
-    Group('chat').send({'text': json.dumps({'message': message.content['text'],
-    										'sender': message.user.username,
+    Group('chat').send({'text': json.dumps({'message': data['text'],
+    										'sender': user.username,
     										'screaming': screaming})})
 
 
