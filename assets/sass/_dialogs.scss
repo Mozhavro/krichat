@@ -48,7 +48,7 @@ $bubbles: rgba(84, 150, 149, 0.8);
 						background: url(../images/users-group.svg);
 						@include bg();
 						cursor: pointer; 
-						@import tablet() {
+						@include tablet() {
 							& {
 								display: inline-block;
 							}
