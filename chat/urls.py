@@ -4,8 +4,10 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^$', views.chat_index, name='index'),
+    url(r'^$', views.chat, name='index'),
     # url(r'^auth/$', views.chat_auth),
+
+    url(r'^(?P<slug>[-\w]+)/$', views.chat_room),
 
     #auth
     url(r'^accounts/', include('registration.backends.simple.urls')),

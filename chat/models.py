@@ -8,10 +8,10 @@ class Chatter(models.Model):
 
 class Room(models.Model):
 	title 		= models.CharField(max_length=100)
-	chatters 	= models.ManyToManyField('chat.Chatter')
+	chatters 	= models.ManyToManyField(User)
 
 class Message(models.Model):
-	sender 		= models.ForeignKey('chat.Chatter')
+	sender 		= models.ForeignKey(User)
 	room 		= models.ForeignKey('chat.Room')
 	text 		= models.CharField(max_length=1000)
 	is_loud		= models.BooleanField(default=True)
