@@ -53,7 +53,7 @@ PWA_APP_DESCRIPTION = "An offline chat"
 PWA_APP_THEME_COLOR = '#e84949'
 PWA_APP_ICONS = [
     {
-        'src': '/static/images/avatar.jpg',
+        'src': '../assets/static/images/avatar.jpg',
         'sizes': '160x160'
     }
 ]
@@ -107,14 +107,20 @@ DATABASES = {
     #}
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'lalala',                      # Or path to database file if using sqlite3.
-        'USER': 'lalala',                      # Not used with sqlite3.
-        'PASSWORD': 'lalala',                  # Not used with sqlite3.
+        'NAME': 'krichat',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 's7plma8d',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '../assets/static/cache',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -150,7 +156,7 @@ USE_TZ = True
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'chat', 'serviceworker.js')
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'chat', '../assets/static/js/serviceworker.js')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
