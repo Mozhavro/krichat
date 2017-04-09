@@ -1,5 +1,5 @@
 /* ------------- MIXINS --------------*/
-/* line 13, ../../sass/_mixins.scss */
+/* line 31, ../../sass/_mixins.scss */
 .confines-width, #header .confines-width {
   width: 96%;
   max-width: 1100px;
@@ -19,20 +19,20 @@
   font-family: "Roboto-Bold";
   src: url("fonts/Roboto-Bold.ttf") format("truetype");
 }
-/* line 135, ../../sass/_mixins.scss */
+/* line 153, ../../sass/_mixins.scss */
 .flex, #header .confines-width, #header .confines-width .right-part, #header .confines-width .right-part #navigation ul, #header .confines-width .right-part .personal-links, .center-block, #form-reset-password .bottom-block, #form-login .bottom-block, #form-register .bottom-block, .wrapper .confines-width .content-page #dialogs-container .columns, .wrapper .confines-width .content-page #dialogs-container .conversation .name, .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings, .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out, .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .row-input:nth-child(2), .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 {
   display: -webkit-flex;
   display: flex;
 }
 
-/* line 140, ../../sass/_mixins.scss */
+/* line 158, ../../sass/_mixins.scss */
 .text-ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* line 146, ../../sass/_mixins.scss */
+/* line 164, ../../sass/_mixins.scss */
 .button, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message {
   background: #e84949;
   padding: 11px 20px 8px;
@@ -46,7 +46,7 @@
   border: none;
   font: 700 16px "Roboto-Regular";
 }
-/* line 158, ../../sass/_mixins.scss */
+/* line 176, ../../sass/_mixins.scss */
 .button:after, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message:after {
   content: '';
   position: absolute;
@@ -60,7 +60,7 @@
   -webkit-transition: 0.8s left;
   transition: 0.8s left;
 }
-/* line 171, ../../sass/_mixins.scss */
+/* line 189, ../../sass/_mixins.scss */
 .button:hover:after, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message:hover:after {
   left: -300%;
 }
@@ -116,7 +116,7 @@
   transition: 0.3s all;
   border-bottom: 1px solid transparent;
 }
-/* line 63, ../../sass/_mixins.scss */
+/* line 81, ../../sass/_mixins.scss */
 #header .confines-width .right-part #navigation ul a:hover {
   padding-bottom: 4px;
   border-color: white;
@@ -157,7 +157,7 @@
   padding: 10px 0px 11px;
   text-transform: uppercase;
 }
-/* line 63, ../../sass/_mixins.scss */
+/* line 81, ../../sass/_mixins.scss */
 #header .confines-width .right-part .personal-links a:hover {
   padding-bottom: 4px;
   border-color: white;
@@ -454,11 +454,12 @@ body.open-menu .wrapper #header .confines-width .right-part {
   padding-top: 15px;
   height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 /* line 7, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .columns {
-  border: 1px solid #E8E8E8;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 /* line 11, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation {
@@ -471,17 +472,22 @@ body.open-menu .wrapper #header .confines-width .right-part {
   background: #333;
   color: white;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
   -webkit-justify-content: space-between;
   justify-content: space-between;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 21, ../../sass/_dialogs.scss */
+/* line 24, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings {
   -webkit-align-items: center;
   align-items: center;
 }
-/* line 24, ../../sass/_dialogs.scss */
+/* line 27, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out {
   cursor: pointer;
   color: white;
@@ -489,7 +495,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -webkit-align-items: center;
   align-items: center;
 }
-/* line 31, ../../sass/_dialogs.scss */
+/* line 34, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out span {
   display: inline-block;
   width: 30px;
@@ -501,7 +507,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   cursor: pointer;
   margin-left: 15px;
 }
-/* line 43, ../../sass/_dialogs.scss */
+/* line 46, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages {
   height: calc(100vh - 280px);
   padding-bottom: 25px;
@@ -509,11 +515,11 @@ body.open-menu .wrapper #header .confines-width .right-part {
   background: white;
   border-right: 1px solid #F2EBF2;
 }
-/* line 50, ../../sass/_dialogs.scss */
+/* line 53, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message {
   margin: 10px 20px 10px 15px;
 }
-/* line 53, ../../sass/_dialogs.scss */
+/* line 56, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message .message {
   width: auto;
   display: inline-block;
@@ -525,12 +531,12 @@ body.open-menu .wrapper #header .confines-width .right-part {
   color: white;
   border-bottom: 1px solid #EEE;
 }
-/* line 64, ../../sass/_dialogs.scss */
+/* line 67, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.own {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-/* line 66, ../../sass/_dialogs.scss */
+/* line 69, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.own .message:before {
   content: '';
   border: 8px solid transparent;
@@ -539,18 +545,18 @@ body.open-menu .wrapper #header .confines-width .right-part {
   right: -16px;
   top: 8px;
 }
-/* line 76, ../../sass/_dialogs.scss */
+/* line 79, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.not-own {
   -webkit-flex-direction: column;
   flex-direction: column;
 }
-/* line 78, ../../sass/_dialogs.scss */
+/* line 81, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.not-own .name-author {
   color: silver;
   font: 12px "Roboto-Bold", sans-serif;
   margin-bottom: 5px;
 }
-/* line 84, ../../sass/_dialogs.scss */
+/* line 87, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message.not-own .message:before {
   content: '';
   border: 8px solid transparent;
@@ -559,27 +565,30 @@ body.open-menu .wrapper #header .confines-width .right-part {
   left: -16px;
   top: 8px;
 }
-/* line 95, ../../sass/_dialogs.scss */
+/* line 98, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .messages .placeholder-message.time {
   font: 12px "Roboto-Light", sans-serif;
   color: silver;
   text-align: center;
   padding: 10px 0;
 }
-/* line 102, ../../sass/_dialogs.scss */
+/* line 105, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .input-block {
   background: white;
   position: relative;
   padding: 25px 15px 10px;
+  -webkit-box-shadow: 0px -1.5px 1px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px -1.5px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -1.5px 1px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 106, ../../sass/_dialogs.scss */
+/* line 110, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .placeholder-message {
   font: 16px "Roboto-Light", sans-serif;
   color: silver;
   top: 10px;
   position: absolute;
 }
-/* line 112, ../../sass/_dialogs.scss */
+/* line 116, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .input-block #textarea-message {
   width: 100%;
   height: 70px;
@@ -591,16 +600,16 @@ body.open-menu .wrapper #header .confines-width .right-part {
   margin: 10px 0 0;
   font: 14px "Roboto-Light", sans-serif;
 }
-/* line 122, ../../sass/_dialogs.scss */
+/* line 126, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .input-block #textarea-message:focus {
   border-color: #148e8e;
 }
-/* line 126, ../../sass/_dialogs.scss */
+/* line 130, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .row-input:nth-child(2) {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-/* line 130, ../../sass/_dialogs.scss */
+/* line 134, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .send-message {
   cursor: pointer;
   border: none;
@@ -611,25 +620,23 @@ body.open-menu .wrapper #header .confines-width .right-part {
   font: 13px "Roboto-Light", sans-serif;
   float: none;
 }
-/* line 143, ../../sass/_dialogs.scss */
+/* line 147, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv, .wrapper .confines-width .content-page #dialogs-container .all-active-users {
   width: 300px;
   height: calc(100vh - 57px);
   background: white;
-  border-right: 1px solid #D7D7D7;
 }
-/* line 148, ../../sass/_dialogs.scss */
+/* line 152, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person {
   width: 100%;
   -webkit-align-items: center;
   align-items: center;
   padding: 10px 15px;
   cursor: pointer;
-  border-bottom: 1px solid #D7D7D7;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
-/* line 156, ../../sass/_dialogs.scss */
+/* line 160, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person .avatar, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person .avatar {
   width: 35px;
   height: 35px;
@@ -637,7 +644,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   overflow: hidden;
   margin-right: 20px;
 }
-/* line 162, ../../sass/_dialogs.scss */
+/* line 166, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person .avatar img, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person .avatar img {
   max-width: 100%;
   width: 100%;
@@ -645,22 +652,22 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -webkit-object-fit: cover;
   object-fit: cover;
 }
-/* line 170, ../../sass/_dialogs.scss */
+/* line 174, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person:hover, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person:hover {
   background: #555;
   color: white;
 }
-/* line 174, ../../sass/_dialogs.scss */
+/* line 178, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person.active, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person.active {
   background: #333;
   color: white;
 }
-/* line 180, ../../sass/_dialogs.scss */
+/* line 184, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form {
   position: relative;
   margin: 10px 0;
 }
-/* line 183, ../../sass/_dialogs.scss */
+/* line 187, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form input, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form input {
   border: none;
   border-bottom: 1px solid #e84949;
@@ -671,12 +678,12 @@ body.open-menu .wrapper #header .confines-width .right-part {
   color: grey;
   font: 14px "Roboto-Light", sans-serif;
 }
-/* line 192, ../../sass/_dialogs.scss */
+/* line 196, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form input::-webkit-input-placeholder, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form input::-webkit-input-placeholder {
   color: silver;
   font: 15px "Roboto-Regular", sans-serif;
 }
-/* line 197, ../../sass/_dialogs.scss */
+/* line 201, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .search #search-form button, .wrapper .confines-width .content-page #dialogs-container .all-active-users .search #search-form button {
   position: absolute;
   right: 15px;
@@ -693,7 +700,7 @@ body.open-menu .wrapper #header .confines-width .right-part {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 216, ../../sass/_dialogs.scss */
+/* line 220, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 {
   padding: 12px 15px 13px;
   background: #e84949;
@@ -704,8 +711,11 @@ body.open-menu .wrapper #header .confines-width .right-part {
   justify-content: space-between;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 224, ../../sass/_dialogs.scss */
+/* line 229, ../../sass/_dialogs.scss */
 .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 .people {
   display: inline-block;
   width: 30px;
