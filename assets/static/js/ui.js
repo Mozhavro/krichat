@@ -52,7 +52,11 @@ jQuery(document).ready(function($){
 
 	elementMessage.keydown(function(e) {
 	    if(e.which == 13) {
-	        webSocket.send(elementMessage.val());
+			data = {
+				'text': elementMessage.val(),
+				'room_id': $('.conversation').attr('data-room'),
+			}
+	        webSocket.send(JSON.stringify(data));
 	        return false;
 	    }
 	});
@@ -78,7 +82,11 @@ jQuery(document).ready(function($){
 		elementMessage.val('').focus();
 	}
 	$('.send-message').click(function(e) {
-	    webSocket.send(elementMessage.val());
+	    data = {
+			'text': elementMessage.val(),
+			'room_id': $('.conversation').attr('data-room'),
+		}
+		webSocket.send(JSON.stringify(data));
 	})
 
 

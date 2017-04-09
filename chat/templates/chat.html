@@ -9,7 +9,7 @@
 				 <section id="dialogs-container">
 				 	<div class="columns">
 
-				 		<div class="conversation" data-name="{{ user.get_username }}">
+				 		<div class="conversation" data-name="{{ user.get_username }}" data-room="{{ room.id }}">
 				 			<div class="name"> {% if request.path == '/' %}Общая комната{% else %} {{ user.username }}@{{ room.title }} {% endif %}
 				 				<span class="settings">
 				 					<a href="{% url 'auth_logout' %}?next=/" class="log-out">Выйти<span></span></a>
@@ -17,7 +17,13 @@
 		 					</div>
 
 				 			<div class="messages scrollbar-macosx">
-				 							 				
+                                {% for message in messages %}
+                                    <div class="single-message {% if message.sender.id == user.id %} own {% else %} notOwn {% endif %}">
+                                        <div class="message">
+                                            {{ message.text }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
 				 			</div>
 				 			<div class="input-block">			 			
 
