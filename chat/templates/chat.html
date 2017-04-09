@@ -10,49 +10,20 @@
 				 	<div class="columns">
 
 				 		<div class="conversation" data-name="{{ user.get_username }}">
-				 			<div class="name">Покатушки 
+				 			<div class="name"> {% if request.path == '/' %}Общая комната{% else %} {{request.path|title }} {% endif %}
 				 				<span class="settings">
-				 					<span class="log-out">Log out</span>
-				 					<span class="people"></span>
+				 					<a href="{% url 'auth_logout' %}?next=/" class="log-out">Выйти<span></span></a>
 			 					</span>
 		 					</div>
 
 				 			<div class="messages scrollbar-macosx">
-				 				<div class="single-message own"> 
-				 					<div class="message">Hello!</div>
-			 					</div>
-			 					<div class="single-message not-own"> 
-			 						<div class="name-author">Yaaaa</div>	 
-				 					<div class="message">Hello, John!</div>
-			 					</div>
-			 					<div class="single-message own">
-				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque dolores animi praesentium est dolor culpa voluptate fugiat rerum ut laborum sint temporibus eligendi fuga dolorem saepe neque, odit dicta debitis.</div>
-			 					</div>
-			 					<div class="placeholder-message time">08/04/2017</div>
-			 					<div class="single-message not-own">
-			 						<div class="name-author">Yaaaa</div>
-				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
-			 					</div>
-			 					<div class="single-message not-own">
-			 						<div class="name-author">Po</div>	
-				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
-			 					</div>
-			 					<div class="single-message not-own">
-			 						<div class="name-author">Guli</div>
-				 					<div class="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
-			 					</div>				 				
+				 							 				
 				 			</div>
 				 			<div class="input-block">			 			
 
-
-			
-
-					 					<span class="input">
-											<textarea id="textarea-message" class="input__field"></textarea>
-											<label class="input__label" for="textarea-message">
-												<span class="input__label-content">Введите сообщение</span>
-											</label>
-										</span>
+				 					<span class="input">
+										<textarea id="textarea-message" placeholder="Введите сообщение" class="input__field"></textarea>
+									</span>
 
 
 									<div class="row-input">
@@ -61,47 +32,21 @@
 
 				 			</div>
 				 		</div>
-				 		<div class="list-of-all-conv scrollbar-macosx">
-				 			<div class="search">
-				 				<form action="" id="search-form"> 
-									<input class="input__field" type="text" placeholder="Поиск" id="search-conversation" />   
-									<button class="add-button"></button> 
-				 				</form>
-				 			</div>
-				 			<div class="person">
+					 	<div class="all-active-users scrollbar-macosx">
+					 		<h3>Кто здесь?<span class="people"></span></h3>
+					 		<div class="person">
 				 				<div class="avatar">
 				 					<img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
 				 				</div>
-				 				<div class="nickname">Беседа1</div>
+				 				<div class="nickname">QQQ</div>
 				 			</div> 
 				 			<div class="person">
 				 				<div class="avatar">
 				 					<img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
 				 				</div>
-				 				<div class="nickname">Беседа1</div>
+				 				<div class="nickname">QQQ</div>
 				 			</div> 
-				 			<div class="person active">
-				 				<div class="avatar">
-				 					<img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
-				 				</div>
-				 				<div class="nickname">Беседа2</div>
-				 			</div>
-				 		</div>
-				 	</div>
-				 	<div class="all-active-users scrollbar-macosx">
-				 		<h3>Online users</h3>
-				 		<div class="person">
-			 				<div class="avatar">
-			 					<img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
-			 				</div>
-			 				<div class="nickname">QQQ</div>
-			 			</div> 
-			 			<div class="person">
-			 				<div class="avatar">
-			 					<img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
-			 				</div>
-			 				<div class="nickname">QQQ</div>
-			 			</div> 
+					 	</div>
 				 	</div>
 				 </section>
 			</main> 
