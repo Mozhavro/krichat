@@ -12,16 +12,29 @@ def kri_connect(message):
     Group('chat').add(message.reply_channel)
     message.reply_channel.send({"accept": True})
 
+
 @channel_session_user
 def kri_message(message):
-    user = message.user
+    data = json.loads(message.content['text'])
 
-    if message.content['text'].isupper() :
-    	screaming = True
-    else :
-    	screaming = False
-    Group('chat').send({'text': json.dumps({'message': message.content['text'],
-    										'sender': message.user.username,
+    user = message.user
+    room = Room.objects.get(pk=data['room_id'])
+
+    msg = Message(
+        sender=user,
+        room=room,
+        text=data['text'],
+        is_loud=False
+    )
+    msg.save()
+
+    if message.content['text'].isupper():
+        screaming = True
+    else:
+        screaming = False
+
+    Group('chat').send({'text': json.dumps({'message': data['text'],
+    										'sender': user.username,
     										'screaming': screaming})})
 
 

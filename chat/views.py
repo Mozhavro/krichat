@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from .models import User, Room
+from .models import User, Room, Message
 
 
 @login_required
@@ -19,10 +19,13 @@ def chat_room(request, slug='/'):
     room.chatters.add(request.user)
 
     users = room.chatters.all()
+    msgs = Message.objects.filter(room=room)
+    print(vars(msgs))
 
     context = {
         'room': room,
-        'users': users
+        'users': users,
+        'messages': msgs,
     }
 
     return render(request, 'chat.html', context=context)
