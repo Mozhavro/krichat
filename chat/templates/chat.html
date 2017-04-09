@@ -10,7 +10,7 @@
 				 	<div class="columns">
 
 				 		<div class="conversation" data-name="{{ user.get_username }}">
-				 			<div class="name"> {% if request.path == '/' %}Общая комната{% else %} {{request.path|title }} {% endif %}
+				 			<div class="name"> {% if request.path == '/' %}Общая комната{% else %} {{ user.username }}@{{ room.title }} {% endif %}
 				 				<span class="settings">
 				 					<a href="{% url 'auth_logout' %}?next=/" class="log-out">Выйти<span></span></a>
 			 					</span>
@@ -34,6 +34,14 @@
 				 		</div>
 					 	<div class="all-active-users scrollbar-macosx">
 					 		<h3>Кто здесь?<span class="people"></span></h3>
+                            {% for usr in users %}
+                                <div class="person">
+                                    <div class="avatar">
+                                        <img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
+                                    </div>
+				 				<div class="nickname">{{ usr.username }}</div>
+				 			</div>
+                            {% endfor %}
 					 		<div class="person">
 				 				<div class="avatar">
 				 					<img src="{% static 'images/avatar.jpg' %}" alt="avatar-image">
