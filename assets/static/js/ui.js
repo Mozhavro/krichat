@@ -50,6 +50,13 @@ jQuery(document).ready(function($){
 	msgArea.animate({ scrollTop: $(document).height() }, 0);
 	elementMessage.val('').focus();
 
+	elementMessage.keydown(function(e) {
+	    if(e.which == 13) {
+	        webSocket.send(elementMessage.val());
+	        return false;
+	    }
+	});
+
 	webSocket.onmessage = function(message) {
 	    var data = JSON.parse(message.data);
 	    var notOwn = '';

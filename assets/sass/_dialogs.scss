@@ -12,7 +12,7 @@ $bubbles: rgba(84, 150, 149, 0.8);
 	 	width: calc(100% - 300px); 
 	 	.name {
 			font: 22px $textFont, sans-serif;
-			padding: 10px 15px;
+			padding: 12px 15px 13px;
 			background: #333;
 			color: white;
 			white-space: nowrap;
@@ -21,19 +21,22 @@ $bubbles: rgba(84, 150, 149, 0.8);
 			.settings { 
 				@extend .flex;
 				@include alignItems(center);
-				.log-out {
-					margin-right: 20px;
+				.log-out { 
 					cursor: pointer;
 					color: white;
 					font: 14px $lightTextFont, sans-serif; 
-				}
-				.people {
-					display: inline-block;
-					width: 30px;
-					height: 30px;
-					background: url(../images/users-group.svg);
-					@include bg();
-					cursor: pointer; 
+
+					@extend .flex;
+					@include alignItems(center);
+					span {
+						display: inline-block;
+						width: 30px;
+						height: 30px;
+						background: url(../images/logout.svg);
+						@include bg();
+						cursor: pointer; 
+						margin-left: 15px;
+					}
 				}
 			}			
 	 	} 
@@ -209,26 +212,24 @@ $bubbles: rgba(84, 150, 149, 0.8);
 	 	}
 	 }
 	 .all-active-users  {
-	 	position: absolute;
-	 	right: 1px ;
-	 	top: 15px;
-	 	-webkit-transform: translateX(100%);
-	 	transform: translateX(100%);
-	 	@include trans();
-	 	&.active {
-	 		-webkit-transform: translateX(0%);
-	 		transform: translateX(0%);
-	 	}
+
 	 	h3 {
-	 		padding: 14px 15px;
+	 		padding: 12px 15px 13px;
 	 		background: $red;
 	 		color: white; 
 	 		margin: 0;
-	 		font: 18px $textFont, sans-serif;
+	 		font: 22px $textFont, sans-serif;
+	 		@extend .flex;
+	 		@include alignBoth(space-between, center);
+	 		.people {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background: url(../images/users-group.svg);
+				@include bg();
+				cursor: pointer; 
+			}
 	 	}
-	 }
-	 .all-active-users.scroll-content {
-	 	top: .5px;
 	 }
 	 position: relative;
 	 overflow: hidden;
