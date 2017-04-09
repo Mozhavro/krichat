@@ -15,9 +15,14 @@ def kri_connect(message):
 @channel_session_user
 def kri_message(message):
     user = message.user
-    print(vars(message))
+
+    if message.content['text'].isupper() :
+    	screaming = True
+    else :
+    	screaming = False
     Group('chat').send({'text': json.dumps({'message': message.content['text'],
-    										'sender': message.user.username})})
+    										'sender': message.user.username,
+    										'screaming': screaming})})
 
 
 @channel_session_user

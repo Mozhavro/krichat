@@ -26,6 +26,13 @@ $bubbles: rgba(84, 150, 149, 0.8);
 			@extend .flex;
 			@include alignBoth(space-between, center);
 			@include material--shadow-bottom;
+			input{
+				background: #333;
+			    border: none;
+			    color: white;
+			    border-bottom: 1px solid white;
+			    width: 90%;
+			}
 			.settings { 
 				@extend .flex;
 				@include alignItems(center);
@@ -113,6 +120,34 @@ $bubbles: rgba(84, 150, 149, 0.8);
 						  top: 8px;
 						}
 					}
+	 			}
+	 			&.own.screaming {
+	 				.message{
+		 				font-size: 36px;
+		 				background-color: #e84949;
+		 				&:before {
+						  content: '';
+							border: 8px solid transparent;
+							border-left-color: #e84949;
+							position: absolute;
+							right: -16px;
+							top: 21px;
+						}
+		 			}
+	 			}
+	 			&.not-own.screaming {
+	 				.message{
+		 				font-size: 36px;
+		 				background-color: #e84949;
+		 				&:before {
+						  content: '';
+						  border: 8px solid transparent;
+						  border-right-color: #e84949;
+						  position: absolute;
+						  left: -16px;
+						  top: 21px;
+						}
+		 			}
 	 			}
 	 		}
 	 		.placeholder-message.time {

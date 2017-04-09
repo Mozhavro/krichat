@@ -61,14 +61,19 @@ jQuery(document).ready(function($){
 	    var data = JSON.parse(message.data);
 	    var notOwn = '';
 	    var nameElement = '';
+	    var screaming = '';
 	    var msgArea = $('.messages');
+
+	    if (data.screaming) {
+	    	screaming = ' screaming ';
+	    }
 
 	    if (name != data.sender) {
 	    	notOwn = 'not-';
 	    	nameElement = '<div class="name-author">' + data.sender + '</div>';
 	    }
 
-	    var msg = '<div class="single-message ' + notOwn + 'own">' +
+	    var msg = '<div class="single-message ' + notOwn + screaming + 'own">' +
 	    nameElement + '<div class="message">' + data.message + '</div>' + 
 	    '</div>';
 
