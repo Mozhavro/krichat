@@ -25,7 +25,14 @@ SECRET_KEY = 'su1030v4i3+4gs$@(j!=5(=7$*ayve))axs&)w!2&o#=1-lnu9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.43.114',
+    '192.168.3.213',
+    '192.168.2.117',
+    '192.168.0.114',
+    '127.0.0.1',
+    'localhost'
+]
 
 
 # Application definition
@@ -38,7 +45,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
-    'chat'
+    'chat',
+    'pwa',
+]
+
+PWA_APP_NAME = 'KriChat'
+PWA_APP_DESCRIPTION = "An offline chat"
+PWA_APP_THEME_COLOR = '#e84949'
+PWA_APP_ICONS = [
+    {
+        'src': '../assets/static/images/scream.png',
+        'sizes': '160x160'
+    }
 ]
 
 CHANNEL_LAYERS = {
@@ -90,14 +108,20 @@ DATABASES = {
     #}
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'cha',                      # Or path to database file if using sqlite3.
+        'NAME': 'krichat',                      # Or path to database file if using sqlite3.
         'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '1337',
+        'PASSWORD': 's7plma8d',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '../assets/static/cache',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -132,6 +156,8 @@ USE_L10N = True
 USE_TZ = True
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'chat', '../assets/static/js/serviceworker.js')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/

@@ -28,11 +28,19 @@ def kri_message(message):
     )
     msg.save()
 
-    # room = Room.objects.get(message.content['text'].room_id)
-    # print(message.content['text'])
-    Group('chat').send({'text': json.dumps({'message': data['text'],
-                                            'sender': message.user.username})})
+    if message.content['text'].isupper():
+        screaming = True
+    else:
+        screaming = False
+
+    Group('chat').send({'text': json.dumps({'message': message.content['text'],
+    										'sender': message.user.username,
+    										'screaming': screaming})})
+
 
 @channel_session_user
 def kri_disconnect(message):
     Group('chat').discard(message.reply_channel)
+
+
+
