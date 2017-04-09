@@ -1,6 +1,6 @@
 {% load staticfiles %}
 {% load i18n %}
-
+{% load pwa %}
 <!DOCTYPE html> 
     <head>
         <meta charset="UTF-8"> 
@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">  
         <link rel="stylesheet" href="{% static 'css/lib/jquery.scrollbar.css' %}">
         <link rel="stylesheet" href="{% static 'css/app.css' %}">
+        {% progressive_web_app_meta %}
     </head> 
     <body>
         <div class="wrapper">
@@ -26,13 +27,7 @@
 
 
         <!-- Core Scripts - Include with every page -->
-        <script>
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker
-                   .register("{% static 'js/sw.js' %}")
-                   .then(function() { console.log("Service Worker Registered"); });
-        }
-        </script>
+
         <script src = "{% static 'js/lib/jquery-3.2.0.min.js' %}"></script>
         <script src = "{% static 'js/lib/jquery.scrollbar.min.js' %}"></script> 
         <script src = "{% static 'js/ui.js' %}"></script> 
