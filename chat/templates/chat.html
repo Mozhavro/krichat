@@ -10,9 +10,10 @@
 				 	<div class="columns">
 
 				 		<div class="conversation" data-name="{{ user.get_username }}">
-				 			<div class="name"> {% if request.path == '/' %}Общая комната{% else %} {{ user.username }}@{{ room.title }} {% endif %}
+				 			<div class="name"><form action="/"><input type="text" name="room" value="{% if request.path == '/' %}Общая комната{% else %} {{ user.username }}@{{ room.title }} {% endif %}"></form>
 				 				<span class="settings">
 				 					<a href="{% url 'auth_logout' %}?next=/" class="log-out">Выйти<span></span></a>
+				 					<span class="people"></span>
 			 					</span>
 		 					</div>
 

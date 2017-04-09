@@ -10,7 +10,7 @@ def chat(request):
 
 
 @login_required
-def chat_room(request, slug):
+def chat_room(request, slug='/'):
 
     room, created = Room.objects.get_or_create(
         title=slug

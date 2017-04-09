@@ -3,6 +3,8 @@ import json
 from channels.auth import http_session_user, channel_session_user, channel_session_user_from_http 
 from channels.channel import Group
 
+from .models import User, Message, Room
+
 http_user = True
 
 @channel_session_user_from_http  
@@ -12,9 +14,20 @@ def kri_connect(message):
 
 @channel_session_user
 def kri_message(message):
+    user = message.user
+
+    if message.content['text'].isupper() :
+    	screaming = True
+    else :
+    	screaming = False
     Group('chat').send({'text': json.dumps({'message': message.content['text'],
-                                            'sender': message.user.username})})
+    										'sender': message.user.username,
+    										'screaming': screaming})})
+
 
 @channel_session_user
 def kri_disconnect(message):
     Group('chat').discard(message.reply_channel)
+
+
+

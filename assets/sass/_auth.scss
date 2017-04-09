@@ -97,3 +97,13 @@
 	} 
 }
  
+
+ #form-login {
+ 	@include mobile() {
+ 		& {
+ 		 input[type="submit"] {
+ 		 	width: 90%;
+ 		 }
+ 		}
+ 	}
+ }
