@@ -9,15 +9,15 @@
 
 @font-face {
   font-family: "Roboto-Regular";
-  src: url("fonts/Roboto-Regular.ttf") format("truetype");
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Light";
-  src: url("fonts/Roboto-Light.ttf") format("truetype");
+  src: url("../fonts/Roboto-Light.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto-Bold";
-  src: url("fonts/Roboto-Bold.ttf") format("truetype");
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
 }
 /* line 153, ../../sass/_mixins.scss */
 .flex, #header .confines-width, #header .confines-width .right-part, #header .confines-width .right-part #navigation ul, #header .confines-width .right-part .personal-links, .center-block, #form-reset-password .bottom-block, #form-login .bottom-block, #form-register .bottom-block, .wrapper .confines-width .content-page #dialogs-container .columns, .wrapper .confines-width .content-page #dialogs-container .conversation .name, .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings, .wrapper .confines-width .content-page #dialogs-container .conversation .name .settings .log-out, .wrapper .confines-width .content-page #dialogs-container .conversation .messages .single-message, .wrapper .confines-width .content-page #dialogs-container .conversation .input-block .row-input:nth-child(2), .wrapper .confines-width .content-page #dialogs-container .list-of-all-conv .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users .person, .wrapper .confines-width .content-page #dialogs-container .all-active-users h3 {
