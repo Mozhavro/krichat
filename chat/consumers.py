@@ -5,7 +5,9 @@ from channels.channel import Group
 
 from .models import User, Message, Room
 
+
 http_user = True
+
 
 @channel_session_user_from_http  
 def kri_connect(message):
@@ -34,8 +36,8 @@ def kri_message(message):
         screaming = False
 
     Group('chat').send({'text': json.dumps({'message': data['text'],
-    										'sender': user.username,
-    										'screaming': screaming})})
+                                            'sender': user.username,
+                                            'screaming': screaming})})
 
 
 @channel_session_user
