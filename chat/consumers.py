@@ -22,18 +22,21 @@ def kri_message(message):
     user = message.user
     room = Room.objects.get(pk=data['room_id'])
 
+    if data['text'].isupper():
+        screaming = True
+    else:
+        screaming = False
+
+
     msg = Message(
         sender=user,
         room=room,
         text=data['text'],
-        is_loud=False
+        is_loud=screaming
     )
+    
     msg.save()
 
-    if message.content['text'].isupper():
-        screaming = True
-    else:
-        screaming = False
 
     Group('chat').send({'text': json.dumps({'message': data['text'],
                                             'sender': user.username,
